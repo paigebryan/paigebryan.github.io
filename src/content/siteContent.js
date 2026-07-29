@@ -16,32 +16,43 @@ export const siteContent = {
 
   workTimeline: [
     {
-      key: "nasa",
-      company: "NASA",
-      role: "Robotics Engineering",
-      date: "Add dates",
-      note:
-        "Add one sentence describing the system, mission, or technical problem you supported.",
-      color: "yellow",
-      tilt: -2
-    },
-    {
       key: "blueOrigin",
       slug: "blue-origin",
       company: "Blue Origin",
       role: "Mechanical Engineering",
-      date: "Add dates",
+      date: "May 2026 to Aug 2026",
       note:
         "Add one sentence describing the hardware, analysis, or design work you owned.",
       color: "blue",
       tilt: 2
     },
     {
+      key: "nasa",
+      company: "NASA",
+      role: "Robotics Engineering",
+      date: "Aug 2025 to Dec 2025",
+      note:
+        "Add one sentence describing the system, mission, or technical problem you supported.",
+      color: "yellow",
+      tilt: -2
+    },
+    {
+      key: "exxonMobil",
+      slug: "exxonmobil",
+      company: "ExxonMobil",
+      role: "Mechanical Engineering Intern",
+      date: "May 2025 to Aug 2025",
+      note:
+        "Recalculated heat-exchanger retirement life in PV Elite, supporting a 5+ year life extension and avoiding approximately $350,000 in replacement cost.",
+      color: "pink",
+      tilt: 2
+},
+    {
       key: "johnDeere",
       slug: "john-deere",
       company: "John Deere",
       role: "Engineering",
-      date: "Add dates",
+      date: "May 2024 to Aug 2024",
       note:
         "Add one sentence describing the product, subsystem, or process you improved.",
       color: "green",
@@ -54,7 +65,7 @@ export const siteContent = {
     blueOrigin: {
       company: "Blue Origin",
       role: "Mechanical Engineering Intern",
-      dates: "May 2026 to August 2026",
+      dates: "May 2026 to Aug 2026",
       summary:
         "Use non-confidential language to show your engineering judgment and contribution.",
     },
@@ -62,7 +73,7 @@ export const siteContent = {
     nasa: {
       company: "NASA",
       role: "Robotics Engineering Intern",
-      dates: "August 2025 to December 2025",
+      dates: "Aug 2025 to Dec 2025",
       summary:
         "Use this page to tell one complete engineering story rather than listing every task.",
     },
@@ -70,7 +81,7 @@ export const siteContent = {
     exxonMobil: {
       company: "ExxonMobil",
       role: "Mechanical Engineering Intern",
-      dates: "May 2025 to August 2025",
+      dates: "May 2025 to Aug 2025",
       summary:
         "Use this page to tell one complete engineering story rather than listing every task.",
     },
@@ -78,7 +89,7 @@ export const siteContent = {
     johnDeere: {
       company: "John Deere",
       role: "Advanced R&D Engineering Intern",
-      dates: "May 2026 to August 2024",
+      dates: "May 2026 to Aug 2024",
       summary:
         "Connect the engineering work to the product, manufacturing process, or customer need.",
     }

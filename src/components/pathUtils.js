@@ -3,11 +3,7 @@ const paths = {
   work: "work/",
   about: "interests/",
   contact: "contact/",
-  resume: "resume/",
-
-  // These pages remain available through the About Me page.
-  leadership: "leadership/",
-  coursework: "coursework/"
+  resume: "resume/"
 };
 
 export function pathTo(key, depth = 0) {

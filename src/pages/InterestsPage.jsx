@@ -56,36 +56,7 @@ export default function InterestsPage({ depth }) {
           )
         )}
       </section>
-
-      <section className="about-links">
-        <a
-          className="about-link-card"
-          href={pathTo("leadership", depth)}
-        >
-          <span>additional notes</span>
-
-          <strong>Leadership</strong>
-
-          <p>
-            Organizations, responsibilities,
-            involvement, and measurable results.
-          </p>
-        </a>
-
-        <a
-          className="about-link-card"
-          href={pathTo("coursework", depth)}
-        >
-          <span>technical index</span>
-
-          <strong>Coursework</strong>
-
-          <p>
-            Engineering subjects, technical tools,
-            and academic foundation.
-          </p>
-        </a>
-      </section>
+      
     </NotebookLayout>
   );
 }
