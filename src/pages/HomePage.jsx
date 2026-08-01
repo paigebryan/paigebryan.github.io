@@ -1,5 +1,6 @@
 import NotebookLayout from "../components/NotebookLayout";
 import StickyNote from "../components/StickyNote";
+import ScrollWrittenText from "../components/ScrollWrittenText";
 import { siteContent } from "../content/siteContent";
 import {
   pathTo,
@@ -21,9 +22,9 @@ export default function HomePage({ depth }) {
     >
       <section className="home-hero">
         <div className="hero-writing">
-          <p className="hand-note">
-            MECHANICAL ENGINEERING / FIELD NOTES
-          </p>
+          <ScrollWrittenText as="p" className="hand-note">
+            MECHANICAL ENGINEER
+          </ScrollWrittenText>
 
           <h1>{siteContent.person.name}</h1>
 
@@ -50,9 +51,9 @@ export default function HomePage({ depth }) {
       >
         <div className="section-title-row">
           <div>
-            <p className="hand-note">
+            <ScrollWrittenText as="p" className="hand-note">
               PINNED TIMELINE
-            </p>
+            </ScrollWrittenText>
 
             <h2>Work log</h2>
           </div>
@@ -121,9 +122,9 @@ export default function HomePage({ depth }) {
       </section>
 
       <section className="home-index">
-        <p className="hand-note">
+        <ScrollWrittenText as="p" className="hand-note">
           NOTEBOOK INDEX
-        </p>
+        </ScrollWrittenText>
 
         <h2>Other sections</h2>
 

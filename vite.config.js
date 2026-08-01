@@ -4,6 +4,10 @@ import { resolve } from "node:path";
 export default defineConfig({
   base: "./",
 
+  optimizeDeps: {
+    exclude: ["tegaki"],
+  },
+
   build: {
     outDir: "dist",
     sourcemap: true,

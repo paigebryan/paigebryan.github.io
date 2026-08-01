@@ -10,6 +10,8 @@ import InterestsPage from "./pages/InterestsPage";
 import ContactPage from "./pages/ContactPage";
 import ResumePage from "./pages/ResumePage";
 
+import "@fontsource/caveat/500.css";
+import "@fontsource/caveat/400.css";
 import "./styles/global.css";
 
 const pageName =

@@ -1,0 +1,44 @@
+.scroll-written-text {
+  position: relative;
+  display: inline-grid;
+  width: fit-content;
+
+  /*
+   * Extra room prevents italic Caveat strokes from being
+   * cut off at either end.
+   */
+  padding: 0.15em 0.4em 0.2em 0.2em;
+  overflow: visible;
+}
+
+.scroll-written-text__measurement,
+.scroll-written-text__drawing {
+  grid-area: 1 / 1;
+  white-space: pre;
+}
+
+/*
+ * This invisible copy reserves the correct amount of space.
+ */
+.scroll-written-text__measurement {
+  visibility: hidden;
+  font-family: "Caveat", cursive;
+  font-weight: 500;
+}
+
+/*
+ * Tegaki's stroke animation is placed over the invisible copy.
+ */
+.scroll-written-text__drawing {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: visible;
+}
+
+.scroll-written-text__drawing > *,
+.scroll-written-text__drawing svg {
+  display: block;
+  max-width: none;
+  overflow: visible !important;
+}
