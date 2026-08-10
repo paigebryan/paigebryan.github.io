@@ -16,14 +16,6 @@ export default function NotebookLayout({
           ))}
         </div>
 
-        <header className="notebook-header">
-          <a
-            className="notebook-mark"
-            href={pathTo("home", depth)}
-          >
-            PB / ENGINEERING NOTEBOOK
-          </a>
-
           <nav
             className="notebook-tabs"
             aria-label="Portfolio sections"
@@ -41,6 +33,14 @@ export default function NotebookLayout({
               </a>
             ))}
           </nav>
+          
+          <header className="notebook-header">
+          <a
+            className="notebook-mark"
+            href={pathTo("home", depth)}
+          >
+            PB / ENGINEERING NOTEBOOK
+          </a>
         </header>
 
         <main>{children}</main>

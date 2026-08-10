@@ -47,14 +47,20 @@ a:focus-visible {
 
 .notebook {
   position: relative;
+  overflow: visible;
+  margin-top: 50px;
   min-height: calc(100vh - 44px);
   padding: 0 clamp(24px, 5vw, 84px) 28px clamp(72px, 8vw, 132px);
-  overflow: hidden;
   border: 1px solid rgba(76, 68, 49, .24);
   border-radius: 14px 26px 26px 14px;
   background-color: var(--paper);
   background-image:
-    linear-gradient(90deg, transparent 0 83px, var(--red-line) 83px 85px, transparent 85px),
+    linear-gradient(
+      90deg,
+      transparent 0 83px,
+      var(--red-line) 83px 85px,
+      transparent 85px
+    ),
     linear-gradient(var(--graph-major) 1px, transparent 1px),
     linear-gradient(90deg, var(--graph-major) 1px, transparent 1px),
     linear-gradient(var(--graph-minor) 1px, transparent 1px),
@@ -101,27 +107,28 @@ a:focus-visible {
   letter-spacing: .13em;
 }
 
-.notebook-tabs {
-  display: flex;
-  align-items: flex-end;
-  gap: 4px;
-}
-
 .tab {
   position: relative;
   display: inline-flex;
-  min-height: 44px;
+  min-height: 48px;
   align-items: center;
-  padding: 0 14px;
-  border: 1px solid rgba(0,0,0,.16);
+  justify-content: center;
+
+  padding: 0 16px;
+
+  border: 1px solid rgba(0, 0, 0, 0.16);
   border-bottom: 0;
-  border-radius: 9px 9px 0 0;
+  border-radius: 10px 10px 0 0;
+
   text-decoration: none;
-  font-size: .72rem;
+
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: .045em;
-  transform: translateY(13px);
-  box-shadow: 0 -3px 7px rgba(0,0,0,.07);
+  letter-spacing: 0.045em;
+
+  box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.06);
+
+  z-index: 2;
 }
 
 .tab-1 { background: #f2df87; }
@@ -131,9 +138,28 @@ a:focus-visible {
 .tab-5 { background: #e9d49a; }
 .tab-6 { background: #bcd2c8; }
 
-.tab:hover,
+.tab:hover {
+  transform: translateY(-2px);
+}
+
 .tab[aria-current="page"] {
-  transform: translateY(5px);
+  transform: none;
+}
+
+.notebook-tabs {
+  position: absolute;
+  top: 0;
+  right: 36px;
+
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  justify-content: flex-end;
+
+  gap: 6px;
+
+  transform: translateY(-100%);
+  z-index: 20;
 }
 
 .notebook main {
@@ -776,15 +802,28 @@ a:focus-visible {
   }
 
   .notebook-tabs {
-    position: absolute;
-    right: 0;
-    top: 12px;
-    max-width: 74%;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-  }
+  top: 0;
+  right: 12px;
 
-  .tab { min-height: 38px; }
+  max-width: none;
+
+  flex-wrap: nowrap;
+  gap: 4px;
+
+  transform: translateY(-100%);
+}
+
+.tab {
+  height: 42px;
+  min-height: 42px;
+
+  padding: 0 9px;
+
+  font-size: 0.63rem;
+  letter-spacing: 0.02em;
+
+  white-space: nowrap;
+}
 
   .index-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
 
