@@ -34,14 +34,7 @@ export default function NotebookLayout({
             ))}
           </nav>
           
-          <header className="notebook-header">
-          <a
-            className="notebook-mark"
-            href={pathTo("home", depth)}
-          >
-            PB / ENGINEERING NOTEBOOK
-          </a>
-        </header>
+        <header className="notebook-header" />
 
         <main>{children}</main>
 

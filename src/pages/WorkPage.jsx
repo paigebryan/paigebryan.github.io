@@ -6,12 +6,12 @@ import { workPath } from "../components/pathUtils";
 
 export default function WorkPage({ depth }) {
   return (
-    <NotebookLayout depth={depth} activePage="work">
-      <NotebookHero
-        eyebrow="WORK SECTION / INDEX 01"
-        title="Work notes"
-        intro="A deeper look at the engineering problems, decisions, and results behind each role."
-      />
+    <NotebookLayout
+      depth={depth}
+      activePage="work"
+      pageClass="centered-section"
+    >
+      <NotebookHero title="Work Notes" />
 
       <section className="work-board">
         {siteContent.workTimeline.map((job, index) => (

@@ -1,6 +1,7 @@
 import NotebookLayout from "../components/NotebookLayout";
 import StickyNote from "../components/StickyNote";
 import ScrollWrittenText from "../components/ScrollWrittenText";
+import RotatingWrittenSubtitle from "../components/RotatingWrittenSubtitle";
 import { siteContent } from "../content/siteContent";
 import {
   pathTo,
@@ -22,19 +23,16 @@ export default function HomePage({ depth }) {
     >
       <section className="home-hero">
         <div className="hero-writing">
-          <ScrollWrittenText as="p" className="hand-note">
-            MECHANICAL ENGINEER
-          </ScrollWrittenText>
 
           <h1>{siteContent.person.name}</h1>
 
-          <p className="hero-tagline">
-            {siteContent.person.tagline}
-          </p>
-
-          <p className="hero-intro">
-            {siteContent.person.intro}
-          </p>
+          <RotatingWrittenSubtitle
+            titles={[
+              "MECHANICAL ENGINEER",
+              "ROBOTICIST",
+              "RED BULL ENTHUSIAST",
+            ]}
+          />
         </div>
 
         <a
@@ -55,7 +53,7 @@ export default function HomePage({ depth }) {
               PINNED TIMELINE
             </ScrollWrittenText>
 
-            <h2>Work log</h2>
+            <h2>Work Log</h2>
           </div>
 
           <a
@@ -126,7 +124,7 @@ export default function HomePage({ depth }) {
           NOTEBOOK INDEX
         </ScrollWrittenText>
 
-        <h2>Other sections</h2>
+        <h2>Other Sections</h2>
 
         <div className="index-grid">
           {secondarySections.map(

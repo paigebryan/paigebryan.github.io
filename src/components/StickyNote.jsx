@@ -9,7 +9,7 @@ export default function StickyNote({
       className={`sticky-note sticky-${color} ${className}`}
       style={{ "--tilt": `${tilt}deg` }}
     >
-      <span className="pin" aria-hidden="true" />
+      <span className="note-tape" aria-hidden="true" />
       {children}
     </article>
   );

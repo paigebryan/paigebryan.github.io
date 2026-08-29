@@ -32,7 +32,7 @@ export default function WorkDetailPage({
     );
   }
 
-  const sections =
+  const accomplishments =
     Array.isArray(content.sections)
       ? content.sections
       : [];
@@ -41,6 +41,7 @@ export default function WorkDetailPage({
     <NotebookLayout
       depth={depth}
       activePage="work"
+      pageClass="work-detail-notebook"
     >
       <a
         className="pencil-link back-link"
@@ -50,75 +51,40 @@ export default function WorkDetailPage({
       </a>
 
       <NotebookHero
-        eyebrow={`${content.company} / ${content.dates}`}
-        title={content.role}
-        intro={content.summary}
+        title={content.company}
       >
-        <p className="formula-strip">
-          {content.sketch ??
-            "ENGINEERING CASE STUDY"}
-        </p>
+        <div className="work-detail-meta">
+          <p>
+            <strong>Position:</strong> {content.role}
+          </p>
+          <p>
+            <strong>Location:</strong> {content.location}
+          </p>
+          <p>
+            <strong>Duration:</strong> {content.dates}
+          </p>
+        </div>
       </NotebookHero>
 
-      <section className="case-study-notes">
-        {sections.length > 0 ? (
-          sections.map((section, index) => (
-            <article
-              className="case-note"
-              key={section.title}
-            >
-              <div className="case-number">
-                {String(index + 1).padStart(
-                  2,
-                  "0"
-                )}
-              </div>
+      <section className="work-detail-content">
+        <p className="work-detail-description">
+          {content.team}
+        </p>
 
-              <div>
-                <h2>{section.title}</h2>
+        <ul className="resume-bullets">
+          {accomplishments.map((item) => (
+            <li key={item.title}>{item.body}</li>
+          ))}
+        </ul>
 
-                <p>{section.body}</p>
-
-                <div className="sketch-placeholder">
-                  <span>
-                    Add CAD, diagram, photograph,
-                    plot, or test result
-                  </span>
-
-                  <svg
-                    viewBox="0 0 300 130"
-                    aria-hidden="true"
-                  >
-                    <path d="M18 103c62-74 105-68 137-8 27 52 69 37 126-51" />
-                    <circle
-                      cx="42"
-                      cy="78"
-                      r="21"
-                    />
-                    <path d="M42 56v44M20 78h44" />
-                  </svg>
-                </div>
-              </div>
-            </article>
-          ))
-        ) : (
-          <article className="case-note">
-            <div className="case-number">
-              01
-            </div>
-
-            <div>
-              <h2>Details coming soon</h2>
-
-              <p>
-                Add the problem, your
-                responsibility, engineering
-                approach, and final result inside
-                src/content/siteContent.js.
-              </p>
-            </div>
-          </article>
-        )}
+        <div className="case-photo-grid">
+          <div className="sketch-placeholder">
+            <span>ADD APPROVED TEAM OR WORKSPACE PHOTO</span>
+          </div>
+          <div className="sketch-placeholder">
+            <span>ADD APPROVED PROJECT OR HARDWARE PHOTO</span>
+          </div>
+        </div>
       </section>
     </NotebookLayout>
   );

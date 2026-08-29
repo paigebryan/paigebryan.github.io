@@ -10,65 +10,32 @@ export default function ContactPage({ depth }) {
     <NotebookLayout
       depth={depth}
       activePage="contact"
+      pageClass="centered-section"
     >
-      <NotebookHero
-        eyebrow="CONTACT / NOTEBOOK SECTION"
-        title={content.title}
-        intro={content.intro}
-      />
+      <NotebookHero title="Contact" />
 
       <section className="contact-sheet">
-        <p className="hand-note">
-          CONTACT INFORMATION
-        </p>
-
         <div className="contact-list">
-          <a href={links.email}>
+          <a
+            className="contact-link contact-link-email"
+            href={`mailto:${links.email}`}
+          >
             <span>Email</span>
-
-            <strong>
-              {content.emailLabel}
-            </strong>
+            <strong>{content.emailLabel}</strong>
+            <span aria-hidden="true">→</span>
           </a>
 
           <a
+            className="contact-link contact-link-linkedin"
             href={links.linkedin}
             target="_blank"
             rel="noreferrer"
           >
             <span>LinkedIn</span>
-
-            <strong>
-              Professional profile
-            </strong>
+            <strong>View profile</strong>
+            <span aria-hidden="true">→</span>
           </a>
-
-          <a
-            href={links.github}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span>GitHub</span>
-
-            <strong>
-              Projects and source code
-            </strong>
-          </a>
-
-          <div className="contact-location">
-            <span>Location</span>
-
-            <strong>
-              {content.location}
-            </strong>
-          </div>
         </div>
-
-        <p className="contact-reminder">
-          Replace the placeholder email and
-          LinkedIn address inside
-          src/content/siteContent.js.
-        </p>
       </section>
     </NotebookLayout>
   );

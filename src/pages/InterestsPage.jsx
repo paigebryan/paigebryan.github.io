@@ -22,12 +22,9 @@ export default function InterestsPage({ depth }) {
     <NotebookLayout
       depth={depth}
       activePage="about"
+      pageClass="centered-section"
     >
-      <NotebookHero
-        eyebrow="ABOUT ME / NOTEBOOK SECTION"
-        title={content.title}
-        intro={content.intro}
-      />
+      <NotebookHero title="About Me" />
 
       <section className="interest-board">
         {content.items.map(
