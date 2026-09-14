@@ -1,0 +1,37 @@
+.nasa-photos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+  align-items: start;
+  margin-top: 50px;
+}
+.nasa-photo {
+  position: relative;
+  min-width: 0;
+  margin: 0;
+  padding: 10px 10px 0;
+  border: 1px solid var(--border);
+  background: #fffef8;
+  box-shadow: 3px 6px 9px rgba(0,0,0,.12);
+}
+.nasa-photo--rocket-engine-display { grid-column: 1 / -1; }
+.nasa-photo a { display: block; }
+.nasa-photo a:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+.nasa-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.nasa-photo figcaption {
+  padding: 12px 4px 14px;
+  color: var(--ink);
+  font-family: var(--handwriting);
+  font-size: .85rem;
+  line-height: 1.5;
+}
+@media (max-width: 640px) {
+  .nasa-photos { grid-template-columns: minmax(0, 1fr); }
+}
