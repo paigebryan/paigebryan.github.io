@@ -1,6 +1,8 @@
 :root {
   color-scheme: light;
   --paper: #f8f5e7;
+  --notebook-card-width: 360px;
+  --notebook-note-height: 320px;
   --paper-deep: #eee8ce;
   --ink: #1f2528;
   --blue-line: rgba(70, 133, 176, 0.16);
@@ -391,8 +393,8 @@ a:focus-visible {
 .sticky-note {
   --tilt: 0deg;
   position: relative;
-  width: min(100%, 360px);
-  min-height: 230px;
+  width: min(100%, var(--notebook-card-width));
+  min-height: var(--notebook-note-height);
   padding: 34px 28px 26px;
   transform: rotate(var(--tilt));
   box-shadow:
@@ -611,9 +613,9 @@ a:focus-visible {
   align-items: start;
 }
 
-.work-note {
-  width: 100%;
-  min-height: 320px;
+.work-board {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--notebook-card-width)), var(--notebook-card-width)));
+  justify-content: center;
 }
 
 .case-study-notes {
@@ -711,8 +713,6 @@ a:focus-visible {
 }
 
 .metric-note {
-  width: 100%;
-  min-height: 190px;
   display: grid;
   place-items: center;
   text-align: center;
@@ -1257,27 +1257,18 @@ a:focus-visible {
 
 .hobby-pair { min-width: 0; }
 
-.hobby-pair > .sticky-note {
-  min-height: 0;
-  padding: 26px 22px 18px;
-}
-
-.hobby-pair > .sticky-note h3 {
-  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
-}
-
-.hobby-pair > .sticky-note p { margin-bottom: 0; }
+.hobby-pair > .sticky-note { justify-self: center; }
 
 .hobby-pair-with-photo {
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
   align-items: center;
 }
 
 .hobby-pair-with-photo:nth-child(even) {
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .hobby-pair-with-photo:nth-child(even) > .sticky-note {
@@ -1293,14 +1284,14 @@ a:focus-visible {
 
 .hobby-note-photo {
   margin: 0;
-  padding: 10px 10px 24px;
+  padding: 16px 16px 36px;
   transform: rotate(2deg);
   width: 100%;
-  max-width: 330px;
+  max-width: var(--notebook-card-width);
   justify-self: center;
 }
 
-.hobby-note-photo-portrait { max-width: 260px; }
+
 
 @media (max-width: 760px) {
   .hobby-scrapbook { grid-template-columns: 1fr; gap: 24px; padding: 8px; }
@@ -1311,4 +1302,45 @@ a:focus-visible {
     grid-column: auto;
     grid-row: auto;
   }
+}
+
+.contact-form {
+  display: grid;
+  gap: 20px;
+  margin-bottom: 44px;
+  padding: clamp(20px, 4vw, 36px);
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.35);
+  box-shadow: 3px 6px 9px rgba(0,0,0,.08);
+}
+.contact-form h2 { margin: 0; font-family: var(--handwriting); font-size: 2rem; }
+.contact-form p { margin: 0; line-height: 1.6; }
+.contact-form-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.contact-form label { display: grid; gap: 8px; min-width: 0; }
+.contact-form input:not([type="hidden"]),
+.contact-form textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  font: inherit;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--muted);
+  border-radius: 2px;
+}
+.contact-form textarea { resize: vertical; min-height: 140px; }
+.contact-form button {
+  justify-self: start;
+  min-height: 44px;
+  padding: 10px 20px;
+  font: inherit;
+  color: var(--ink);
+  background: var(--yellow);
+  border: 1px solid var(--ink);
+  cursor: pointer;
+}
+.contact-form button:disabled { opacity: .55; cursor: not-allowed; }
+.contact-form-status { color: var(--muted); }
+@media (max-width: 600px) {
+  .contact-form-row { grid-template-columns: 1fr; }
 }

@@ -235,6 +235,7 @@ export const siteContent = {
     intro:
       "For engineering opportunities, questions, or professional conversations.",
     emailLabel: "peachb@live.com",
+    formEndpoint: "https://formsubmit.co/peachb@live.com",
   },
 
   resume: {
