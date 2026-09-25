@@ -21,11 +21,10 @@ export default function WorkPage({ depth }) {
             className="work-note"
             key={job.key}
           >
-            <p className="sticky-date">{job.date}</p>
             <h2>{job.company}</h2>
             <p className="sticky-role">{job.role}</p>
             <p>{job.note}</p>
-            <a href={workPath(job.slug ?? job.key, depth)}>open case study →</a>
+            <a href={workPath(job.slug ?? job.key, depth)}>learn more →</a>
           </StickyNote>
         ))}
       </section>

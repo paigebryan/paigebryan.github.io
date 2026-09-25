@@ -56,12 +56,6 @@ export default function HomePage({ depth }) {
             <h2>Work Log</h2>
           </div>
 
-          <a
-            className="pencil-link"
-            href={pathTo("work", depth)}
-          >
-            open full work section →
-          </a>
         </div>
 
         <div className="sticky-timeline">

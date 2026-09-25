@@ -184,6 +184,25 @@ a:focus-visible {
 
 .notebook-footer a { text-decoration: none; }
 
+.footer-links {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.footer-links a {
+  font: inherit;
+  color: inherit;
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  color: var(--ink);
+  text-decoration: underline;
+}
+
 .home-hero {
   position: relative;
   min-height: 690px;
@@ -966,6 +985,7 @@ a:focus-visible {
 /* Rotating handwritten subtitle */
 
 .rotating-written-subtitle {
+  font-size: clamp(1.15rem, 1.8vw, 1.3rem);
   width: 100%;
   min-height: 1.5em;
   display: flex;
@@ -1051,6 +1071,8 @@ a:focus-visible {
       6px 6px;
   }
 
+}
+
 @media (max-width: 430px) {
   .notebook {
     padding-left: 44px;
@@ -1110,4 +1132,183 @@ a:focus-visible {
 .index-card span {
   font-weight: 400;
   letter-spacing: .008em;
+}
+
+/* About Me: a portrait and personal notes on notebook paper. */
+.about-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(28px, 5vw, 64px);
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+.about-portrait {
+  margin: 0;
+  padding: 12px 12px 6px;
+  background: #f4f0df;
+  box-shadow: 3px 6px 9px rgba(0,0,0,.12);
+  transform: rotate(-2deg);
+}
+
+.about-portrait img,
+.about-photo-placeholder {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.about-portrait img { aspect-ratio: auto; }
+
+.about-photo-placeholder {
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  text-align: center;
+  background: var(--paper-deep);
+  color: var(--muted);
+  font-family: var(--handwriting);
+}
+
+
+
+.about-bio .hand-note { margin-left: 0; }
+.about-bio h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); }
+.about-bio > p:last-child { line-height: 1.8; }
+
+.about-section {
+  margin-top: 70px;
+  padding-top: 30px;
+  border-top: 2px solid rgba(31,37,40,.18);
+}
+
+.about-section > h2 {
+  text-align: center;
+  margin: 10px 0 35px;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+}
+
+.about-pending { text-align: center; color: var(--muted); }
+
+@media (max-width: 760px) {
+  .about-intro { grid-template-columns: 1fr; }
+  .about-portrait { width: min(100%, 280px); justify-self: center; }
+  .about-page .interest-board { grid-template-columns: 1fr; }
+}
+
+.involvement-board {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  align-items: start;
+}
+
+.involvement-card {
+  min-width: 0;
+  padding: 16px 16px 36px;
+  background: #f4f0df;
+  box-shadow: 3px 6px 9px rgba(0,0,0,.12);
+}
+
+
+
+.involvement-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.involvement-card-portrait { grid-row: span 2; }
+
+@media (max-width: 760px) {
+  .involvement-board { grid-template-columns: 1fr; }
+  .involvement-card-portrait { grid-row: auto; }
+}
+
+.involvement-list {
+  display: grid;
+  gap: 22px;
+  margin-bottom: 36px;
+}
+
+.involvement-list article {
+  padding-left: 20px;
+  border-left: 2px solid rgba(31,37,40,.18);
+}
+
+.involvement-list h3 { margin: 0; font-weight: 400; }
+
+.about-section > .scroll-written-text {
+  display: grid;
+  margin-inline: auto;
+}
+
+.hobby-scrapbook {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 12px;
+}
+
+.hobby-pair { min-width: 0; }
+
+.hobby-pair > .sticky-note {
+  min-height: 0;
+  padding: 26px 22px 18px;
+}
+
+.hobby-pair > .sticky-note h3 {
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+}
+
+.hobby-pair > .sticky-note p { margin-bottom: 0; }
+
+.hobby-pair-with-photo {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+  gap: 20px;
+  align-items: center;
+}
+
+.hobby-pair-with-photo:nth-child(even) {
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+}
+
+.hobby-pair-with-photo:nth-child(even) > .sticky-note {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.hobby-pair-with-photo:nth-child(even) > .hobby-note-photo {
+  grid-column: 1;
+  grid-row: 1;
+  transform: rotate(-2deg);
+}
+
+.hobby-note-photo {
+  margin: 0;
+  padding: 10px 10px 24px;
+  transform: rotate(2deg);
+  width: 100%;
+  max-width: 330px;
+  justify-self: center;
+}
+
+.hobby-note-photo-portrait { max-width: 260px; }
+
+@media (max-width: 760px) {
+  .hobby-scrapbook { grid-template-columns: 1fr; gap: 24px; padding: 8px; }
+  .hobby-pair-with-photo,
+  .hobby-pair-with-photo:nth-child(even) { grid-template-columns: 1fr; gap: 18px; }
+  .hobby-pair-with-photo:nth-child(even) > .sticky-note,
+  .hobby-pair-with-photo:nth-child(even) > .hobby-note-photo {
+    grid-column: auto;
+    grid-row: auto;
+  }
 }

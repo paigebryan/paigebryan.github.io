@@ -169,29 +169,64 @@ export const siteContent = {
 
   interests: {
     title: "About Me",
+    photo: "images/about/paige-bryan.jpg",
+    bio:
+      "I'm a senior at Purdue University studying mechanical engineering with minors in computer science and communications. I'm originally from Bellevue, Washington. Being involved in my community is a big part of who I am, and I enjoy connecting with people and taking an active role in campus life.",
+    involvements: [
+      { title: "Purdue Engineering Student Council" },
+      { title: "Purdue Mechanical Engineering Ambassadors" },
+      { title: "College of Engineering Ambassadors" },
+      { title: "Dean's Leadership Scholar" },
+      { title: "Women in Mechanical Engineering" },
+      { title: "American Society of Mechanical Engineers" }
+    ],
+    involvementPhotos: [
+      {
+        photo: "images/about/pmea.jpg",
+        alt: "PMEA group on the steps at Purdue",
+        portrait: true
+      },
+      {
+        photo: "images/about/pesc-rowing.jpg",
+        alt: "PESC friends posing as if rowing a boat at the Purdue fountain"
+      },
+      {
+        photo: "images/about/community-group.jpg",
+        alt: "Group gathered at an indoor Purdue event"
+      }
+    ],
     intro:
       "The interests, experiences, and ideas that shape who I am outside engineering.",
     items: [
-      [
-        "Music",
-        "Concerts, artists, playlists, and the experiences attached to them."
-      ],
-      [
-        "Photography",
-        "Framing places, people, and details with intention."
-      ],
-      [
-        "Thrifting",
-        "Finding unique pieces, hidden gems, and things with a story."
-      ],
-      [
-        "Traveling",
-        "Exploring new places, taking spontaneous trips, and experiencing unfamiliar environments."
-      ],
-      [
-        "Watching Movies",
-        "Discovering memorable stories, characters, visuals, and soundtracks."
-      ]
+      {
+        title: "Music",
+        body: "My all-time favorite artist is Dominic Fike. Last year, I saw him at Lollapalooza, which was my first music festival ever!",
+        photo: "images/about/hobbies-concert.jpg",
+        alt: "An outdoor concert with the city skyline behind the stage",
+        width: 1920, height: 1440
+      },
+      {
+        title: "Photography",
+        body: "I've been doing photography for over five years. I've worked in the darkroom, and lately I've been experimenting with film.",
+        photo: "images/about/hobbies-friends.jpg",
+        alt: "Three friends beside a lake with mountains in the background",
+        width: 1280, height: 960
+      },
+      {
+        title: "Traveling",
+        body: "I've been to Japan twice, and I'm already planning my third trip. On one of those trips, I walked 100 miles!",
+        photo: "images/about/hobbies-street.jpg",
+        alt: "A lively street lined with buildings and trees",
+        width: 1440, height: 1920
+      },
+      {
+        title: "Thrifting",
+        body: "I've been thrifting for almost a decade. My best find so far is a vintage Pottery Barn teapot."
+      },
+      {
+        title: "Watching Movies",
+        body: "I love stop-motion movies, especially Coraline and The Nightmare Before Christmas. Those two are my favorites."
+      }
     ]
   },
 

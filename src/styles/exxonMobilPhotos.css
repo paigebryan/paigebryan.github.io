@@ -9,10 +9,6 @@
   position: relative;
   min-width: 0;
   margin: 0;
-  padding: 10px 10px 0;
-  border: 1px solid var(--border);
-  background: #fffef8;
-  box-shadow: 3px 6px 9px rgba(0,0,0,.12);
 }
 .exxonmobil-photo a { display: block; }
 .exxonmobil-photo a:focus-visible {
@@ -23,13 +19,6 @@
   display: block;
   width: 100%;
   height: auto;
-}
-.exxonmobil-photo figcaption {
-  padding: 12px 4px 14px;
-  color: var(--ink);
-  font-family: var(--handwriting);
-  font-size: .85rem;
-  line-height: 1.5;
 }
 @media (max-width: 760px) {
   .exxonmobil-photos {

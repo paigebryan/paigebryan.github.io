@@ -84,19 +84,15 @@ export default function WorkDetailPage({
           <div className="john-deere-photos" aria-label="John Deere internship photos">
             {[
               { file: "field-survey", width: 1280, height: 720,
-                alt: "Field survey equipment on a tripod beside a pickup truck and team outdoors.",
-                caption: "01 / Field survey" },
+                alt: "Field survey equipment on a tripod beside a pickup truck and team outdoors." },
               { file: "welding-team", width: 828, height: 1097,
-                alt: "A group wearing welding helmets and green protective jackets in a workshop.",
-                caption: "02 / In the welding workshop" },
+                alt: "A group wearing welding helmets and green protective jackets in a workshop." },
               { file: "wheel-loader", width: 1920, height: 1440,
-                alt: "A person climbing into a yellow John Deere wheel loader at an outdoor site.",
-                caption: "03 / Up close with the equipment" },
+                alt: "A person climbing into a yellow John Deere wheel loader at an outdoor site." },
             ].map((photo) => (
-              <figure className={"john-deere-photo john-deere-photo--" + photo.file} key={photo.file}>
-                <span className="note-tape" aria-hidden="true" />
+              <figure className={"involvement-card john-deere-photo john-deere-photo--" + photo.file} key={photo.file}>
                 <a href={pathTo("home", depth) + "images/john-deere/john-deere-" + photo.file + ".jpg"}
-                   aria-label={"View full-size photo: " + photo.caption}>
+                   aria-label={"View full-size photo: " + photo.alt}>
                   <img
                     src={pathTo("home", depth) + "images/john-deere/john-deere-" + photo.file + ".jpg"}
                     alt={photo.alt}
@@ -106,7 +102,6 @@ export default function WorkDetailPage({
                     decoding="async"
                   />
                 </a>
-                <figcaption>{photo.caption}</figcaption>
               </figure>
             ))}
           </div>
@@ -114,19 +109,15 @@ export default function WorkDetailPage({
           <div className="nasa-photos" aria-label="NASA experience photos">
             {[
               { file: "rocket-display", width: 1920, height: 2560,
-                alt: "A person standing in front of tall rockets on outdoor display.",
-                caption: "01 / Rocket display" },
+                alt: "A person standing in front of tall rockets on outdoor display." },
               { file: "payload-operations-center", width: 1440, height: 1920,
-                alt: "The NASA International Space Station Payload Operations Center building beneath a blue sky.",
-                caption: "02 / ISS Payload Operations Center" },
+                alt: "The NASA International Space Station Payload Operations Center building beneath a blue sky." },
               { file: "rocket-engine-display", width: 1920, height: 1440,
-                alt: "A rocket engine and horizontal rocket exhibits on outdoor display.",
-                caption: "03 / Rocket engine display" },
+                alt: "A rocket engine and horizontal rocket exhibits on outdoor display." },
             ].map((photo) => (
-              <figure className={"nasa-photo nasa-photo--" + photo.file} key={photo.file}>
-                <span className="note-tape" aria-hidden="true" />
+              <figure className={"involvement-card nasa-photo nasa-photo--" + photo.file} key={photo.file}>
                 <a href={pathTo("home", depth) + "images/nasa/nasa-" + photo.file + ".jpg"}
-                   aria-label={"View full-size photo: " + photo.caption}>
+                   aria-label={"View full-size photo: " + photo.alt}>
                   <img
                     src={pathTo("home", depth) + "images/nasa/nasa-" + photo.file + ".jpg"}
                     alt={photo.alt}
@@ -136,7 +127,6 @@ export default function WorkDetailPage({
                     decoding="async"
                   />
                 </a>
-                <figcaption>{photo.caption}</figcaption>
               </figure>
             ))}
           </div>
@@ -144,19 +134,15 @@ export default function WorkDetailPage({
           <div className="exxonmobil-photos" aria-label="ExxonMobil internship photos">
             {[
               { file: "refinery-portrait", width: 1920, height: 2240,
-                alt: "A person wearing an ExxonMobil hard hat, safety glasses, and coveralls at the refinery.",
-                caption: "01 / At the refinery" },
+                alt: "A person wearing an ExxonMobil hard hat, safety glasses, and coveralls at the refinery." },
               { file: "process-equipment", width: 1440, height: 1920,
-                alt: "Large cylindrical process equipment with bolted covers and surrounding refinery piping.",
-                caption: "02 / Process equipment" },
+                alt: "Large cylindrical process equipment with bolted covers and surrounding refinery piping." },
               { file: "refinery-view", width: 1440, height: 1920,
-                alt: "An elevated view across refinery towers, structures, and interconnected piping.",
-                caption: "03 / A view across the refinery" },
+                alt: "An elevated view across refinery towers, structures, and interconnected piping." },
             ].map((photo) => (
-              <figure className="exxonmobil-photo" key={photo.file}>
-                <span className="note-tape" aria-hidden="true" />
+              <figure className="involvement-card exxonmobil-photo" key={photo.file}>
                 <a href={pathTo("home", depth) + "images/exxonmobil/exxonmobil-" + photo.file + ".jpg"}
-                   aria-label={"View full-size photo: " + photo.caption}>
+                   aria-label={"View full-size photo: " + photo.alt}>
                   <img
                     src={pathTo("home", depth) + "images/exxonmobil/exxonmobil-" + photo.file + ".jpg"}
                     alt={photo.alt}
@@ -166,7 +152,6 @@ export default function WorkDetailPage({
                     decoding="async"
                   />
                 </a>
-                <figcaption>{photo.caption}</figcaption>
               </figure>
             ))}
           </div>

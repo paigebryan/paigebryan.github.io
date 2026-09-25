@@ -46,6 +46,7 @@ export default function NotebookLayout({
               Contact
             </a>
 
+            <span aria-hidden="true">|</span>
             <a href={pathTo("resume", depth)}>
               Résumé
             </a>

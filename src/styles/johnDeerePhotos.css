@@ -9,10 +9,6 @@
   position: relative;
   min-width: 0;
   margin: 0;
-  padding: 10px 10px 0;
-  border: 1px solid var(--border);
-  background: #fffef8;
-  box-shadow: 3px 6px 9px rgba(0,0,0,.12);
 }
 .john-deere-photo--welding-team {
   grid-column: 2;
@@ -27,13 +23,6 @@
   display: block;
   width: 100%;
   height: auto;
-}
-.john-deere-photo figcaption {
-  padding: 12px 4px 14px;
-  color: var(--ink);
-  font-family: var(--handwriting);
-  font-size: .85rem;
-  line-height: 1.5;
 }
 @media (max-width: 640px) {
   .john-deere-photos { grid-template-columns: minmax(0, 1fr); }
